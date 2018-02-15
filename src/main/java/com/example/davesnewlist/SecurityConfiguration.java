@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/admin","/h2-console/**").hasAuthority("ADMIN")
                 .antMatchers("/user").hasAuthority("USER")
-                .antMatchers("/","/register","/home").permitAll()
+                .antMatchers("/","/registration","/home").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").successForwardUrl("/index").permitAll()
